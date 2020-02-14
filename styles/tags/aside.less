@@ -1,0 +1,27 @@
+aside{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left: 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .openButton{
+    transition: all .4s;
+    border:none;
+    opacity: unset;
+    background-color: transparent;
+    color: white;
+    font-size: 3rem;
+    &:hover{
+      text-shadow: 0 0 .5em white;
+      cursor: pointer;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}

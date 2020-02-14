@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: white;
+}
+* {
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+header {
+  width: 115px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-around;
+  height: 100%;
+}
+header .header-3d {
+  transform: perspective(400px) rotateY(45deg);
+}
+header .header-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+header .header-title {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  transform: rotateZ(180deg);
+  margin: 0;
+  color: white;
+  width: auto;
+  border-left: 5px solid white;
+  user-select: none;
+  font-size: 6rem;
+}
+@media (max-height: 500px) {
+  header .header-title {
+    font-size: 2rem;
+  }
+}
+@media (min-height: 501px) and (max-height: 900px) {
+  header .header-title {
+    font-size: 4rem;
+  }
+}
+header .header-title-sm {
+  font-size: 5rem;
+}
+@media (max-height: 500px) {
+  header .header-title-sm {
+    font-size: 1rem;
+  }
+}
+@media (min-height: 501px) and (max-height: 900px) {
+  header .header-title-sm {
+    font-size: 3rem;
+  }
+}
+header .header-counter {
+  text-align: end;
+  padding-right: 6px;
+  border-right: 5px solid white;
+  position: sticky;
+  top: 0;
+}
+header .header-count {
+  font-size: 2rem;
+  text-shadow: 0 0 1em white;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: #141E30;
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);
+  background: linear-gradient(to right, #243B55, #141E30);
+  user-select: none;
+  z-index: -100;
+  box-shadow: inset 0px 0px 180px -23px rgba(0, 0, 0, 0.75);
+}
+.background span {
+  font-size: 7rem;
+  -webkit-text-fill-color: transparent;
+  background: #141E30;
+  background: -webkit-linear-gradient(to left, #243B55, #141E30);
+  background: linear-gradient(to left, #243B55, #141E30);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: perspective(400px) rotateX(45deg);
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.02);
+}
+.container {
+  width: calc(100% - 115px);
+  margin: 0 0 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+.notes-list {
+  padding: 1rem 2rem;
+  margin: 0;
+  list-style: none;
+  border-left: white 1px solid;
+}
+.notes-list li {
+  list-style-type: none;
+  vertical-align: center;
+}
+.notes-list li div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.notes-list li div h2 {
+  text-shadow: 0 0 0.5em white;
+}
+.notes-list li:before {
+  content: '◼';
+  text-shadow: 0 0 1em white;
+  margin: 0 0.5rem 0 -2.45rem;
+  vertical-align: middle;
+}
+.notes-list li.newNoteLi:before {
+  content: '+';
+  font-size: 2.25rem;
+  margin: 0 0.5rem 0 -2.65rem;
+}
+.notes-list .newNoteLi {
+  position: relative;
+}
+.notes-list .newNoteLi > div {
+  border: 1px solid white;
+  padding: 1rem;
+}
+.notes-list .newNoteLi:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 15px);
+  left: 0%;
+  margin-left: -40px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+.notes-list .newNote {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.notes-list .newNote input,
+.notes-list .newNote textarea,
+.notes-list .newNote select,
+.notes-list .newNote button {
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid white;
+  margin: 1rem 0;
+  width: 100%;
+}
+.notes-list .newNote input:focus,
+.notes-list .newNote textarea:focus,
+.notes-list .newNote select:focus,
+.notes-list .newNote button:focus {
+  outline: none;
+}
+.notes-list .newNote input:focus:not(button),
+.notes-list .newNote textarea:focus:not(button),
+.notes-list .newNote select:focus:not(button),
+.notes-list .newNote button:focus:not(button) {
+  box-shadow: 0 10px 8px -10px white;
+}
+.notes-list .newNote input:first-child {
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+.notes-list .newNote textarea {
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+}
+.notes-list .newNote select option {
+  background-color: #243B55;
+}
+.notes-list .newNote button {
+  border: 1px solid white;
+  padding: 1rem;
+}
+.notes-list .newNote button:hover {
+  transition: all 0.2s;
+  box-shadow: 0 0 0.4em white;
+}
+aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+aside .openButton {
+  transition: all 0.4s;
+  border: none;
+  opacity: unset;
+  background-color: transparent;
+  color: white;
+  font-size: 3rem;
+}
+aside .openButton:hover {
+  text-shadow: 0 0 0.5em white;
+  cursor: pointer;
+}
+aside .openButton:focus {
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */
